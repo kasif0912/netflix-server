@@ -22,7 +22,9 @@ mongoose
   });
 
 app.use("/api/user", userRoutes);
-
+app.get('/', (req,res)=>{
+  res.send(listEndpoints(app))  
+})
 app.listen(ATPORT, () => {
   console.log("server started on port ", ATPORT );
 
